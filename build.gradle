@@ -1,0 +1,27 @@
+group 'com.blackbuild.udom.config'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'maven-publish'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.6'
+    compile 'com.blackbuild.udom.model:demo-model:1.0-SNAPSHOT'
+    testCompile('org.spockframework:spock-core:1.0-groovy-2.4') {
+        exclude module: 'groovy-all'
+    }
+
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
