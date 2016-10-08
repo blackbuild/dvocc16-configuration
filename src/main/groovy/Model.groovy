@@ -42,6 +42,16 @@ Config.create {
             }
             servers.each { it.value.basedir = "/data"}
         }
+        project("DevOpsCamp") {
+            lead "Ich"
+            repositoryUrl "irgendwo"
+            servers {
+                server("PROD") {
+                    hostname "bla.blub"
+                    basedir "/"
+                }
+            }
+        }
     }
 
 
